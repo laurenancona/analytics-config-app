@@ -37,7 +37,7 @@
 
 
 
-### Preparation
+### - Preparation-
 ## What *should* you be tracking?
 ---
 - Crawl primary .gov (.org, .net) domain
@@ -56,7 +56,8 @@ Note: I thought we were alone in having many non .gov sites; every 1-off initiat
 
 
 <!-- .slide: <iframe data-src="http://hakim.se"></iframe> -->
-### What *are* you tracking?
+## What *are* you tracking?
+---
 - any current analytics properties?
 - any other tracking tools (Adobe _formerly Omniture_, Open Analytics, etc)
 - compare with 1st list
@@ -78,6 +79,7 @@ Orlando | UA-45327637-4 |
 
 
 ## What is in this thing?
+---
 - [adds addt'l data to GA](http://www.simoahava.com/analytics/improve-data-collection-with-four-custom-dimensions/)
 - tracks document downloads (like PDFs)
 - useful for later reporting
@@ -85,7 +87,7 @@ Orlando | UA-45327637-4 |
 
 
 
-### TOGETHER:
+### - TOGETHER -
 ## Import GTM Configuration 
 ---
 - [Upload container](https://raw.githubusercontent.com/laurenancona/analytics-cfa/gh-pages/unified-analytics.json)
@@ -101,7 +103,7 @@ Need to add the following [custom dimensions](img/custom-dimension.gif)
 
 
 
-### HOMEWORK:
+### - HOMEWORK -
 ## Deploy Tag Manager
 ---
 - Deploy Tag Manager container
