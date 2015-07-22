@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>d3 testing</title>
+  <script src="//cdn.jsdelivr.net/d3js/3.5.6/d3.min.js"></script>
+  <script src="//cdn.jsdelivr.net/d3js/3.5.6/d3.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery/3.0.0-alpha1/jquery.js"></script>
+</head>
+
+<body>
+  <script>
+    d3.json("https://s3.amazonaws.com/analytics.phila.gov/data/realtime.json", 
+            function (data) {
+      console.log(data[0]);
+    });
+  </script>
+
+</body>
+
+</html>
