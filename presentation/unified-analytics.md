@@ -88,7 +88,7 @@ Orlando | UA-45327637-4 |
 ### TOGETHER:
 ## Import GTM Configuration 
 ---
-- [Upload container](unified-analytics.json)
+- [Upload container](https://raw.githubusercontent.com/laurenancona/analytics-cfa/gh-pages/unified-analytics.json)
 - adds Google Analytics "tag"
 - adds custom [dimensions](https://support.google.com/analytics/answer/1033861?hl=en)
 - adds custom events
@@ -104,7 +104,7 @@ Need to add the following [custom dimensions](img/custom-dimension.gif)
 ### HOMEWORK:
 ## Deploy Tag Manager
 ---
-- [Deploy Tag Manager container](Link)
+- Deploy Tag Manager container
 	- This snippet will go in every page/template/site
 	- If more than 1 current 'template,' start w/department
 	- Once deployed, test
