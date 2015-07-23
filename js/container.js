@@ -12,9 +12,9 @@ function auth() {
   });
 }
 
-$(function(){
+//$(function(){
 
-})
+//})
 
  function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
