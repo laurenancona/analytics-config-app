@@ -30,3 +30,9 @@ $(function(){
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
 }
+
+function containerUpload() {
+  console.log('container upload click');
+}
+
+$('#containerUpload').click(doSomething);
