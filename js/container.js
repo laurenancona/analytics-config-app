@@ -3,7 +3,7 @@
 function auth() {
   var config = {
     'client_id': '735213377869-ij7q11i3740bf2ab6msibo100b43cfja.apps.googleusercontent.com',
-    'scope': 'https://www.googleapis.com/auth/tagmanager.edit.containers'
+    'scope': 'https://www.googleapis.com/auth/tagmanager.edit.containers https://www.googleapis.com/auth/tagmanager.edit.containerversions'
   };
   gapi.auth.authorize(config, function() {
     console.log('login complete');
@@ -16,12 +16,12 @@ function auth() {
 
 //})
 
- function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
+ // function signOut() {
+ //    var auth2 = gapi.auth2.getAuthInstance();
+ //    auth2.signOut().then(function () {
+ //      console.log('User signed out.');
+ //    });
+ //  }
 
   function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
@@ -30,6 +30,15 @@ function auth() {
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
 }
+
+containerData = null;
+$.ajax('unified-analytics.json', {
+  dataType: 'text',
+  success: function(data) {
+    containerData = data;
+  }
+})
+  
 
 function containerUpload() {
   console.log('container upload click');
