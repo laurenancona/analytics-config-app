@@ -35,4 +35,4 @@ function containerUpload() {
   console.log('container upload click');
 }
 
-$('#containerUpload').click(doSomething);
+$('#containerUpload').click(handleContainerUpload);
