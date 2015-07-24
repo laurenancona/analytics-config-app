@@ -46,7 +46,6 @@ $.ajax('unified-analytics.json', {
   dataType: 'text',
   success: function(data) {
     containerData = data
-//    console.log(data);
   }
 })
 
