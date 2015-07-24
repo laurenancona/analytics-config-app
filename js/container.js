@@ -32,10 +32,10 @@ function auth() {
 }
 
 // GET list of accounts for user
-containerData = null;
+accountsData = null;
 $.ajax('https://www.googleapis.com/tagmanager/v1/accounts', {
   success: function(data) {
-    containerData = data,
+    accountsData = data,
     console.log(data);
   }
 })
@@ -51,14 +51,14 @@ $.ajax('unified-analytics.json', {
 })
 
 //   
-var accountId = '';
-var containerId = '';
-var createUrl = '';
-$.ajax(createUrl, {
-  method: 'POST',
-  contentType: 'application/json'
-  data: containerData
-})
+// var accountId = '';
+// var containerId = '';
+// var createUrl = '';
+// $.ajax(createUrl, {
+//   method: 'POST',
+//   contentType: 'application/json'
+//   data: containerData
+// })
 
 function containerUpload() {
   console.log('container upload click');
