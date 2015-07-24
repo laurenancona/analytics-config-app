@@ -32,7 +32,8 @@ function auth() {
 }
 
 // GET list of accounts for user
-accountsData = null;
+
+var accountsData = null;
 $.ajax('https://www.googleapis.com/tagmanager/v1/accounts', {
   success: function(data) {
     accountsData = data,
@@ -45,7 +46,7 @@ containerData = null;
 $.ajax('unified-analytics.json', {
   dataType: 'text',
   success: function(data) {
-    containerData = data
+    containerData = data;
   }
 })
 
