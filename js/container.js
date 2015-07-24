@@ -31,18 +31,38 @@ function auth() {
   console.log('Email: ' + profile.getEmail());
 }
 
+// GET list of accounts for user
 containerData = null;
-$.ajax('unified-analytics.json', {
-  dataType: 'text',
+$.ajax('https://www.googleapis.com/tagmanager/v1/accounts', {
   success: function(data) {
     containerData = data,
     console.log(data);
   }
 })
-  
+
+// Load container configuration JSON file from server
+containerData = null;
+$.ajax('unified-analytics.json', {
+  dataType: 'text',
+  success: function(data) {
+    containerData = data,
+//    console.log(data);
+  }
+})
+
+//   
+var accountId = '';
+var containerId = '';
+var createUrl = '';
+$.ajax(createUrl, {
+  method: 'POST',
+  contentType: 'application/json'
+  data: containerData
+})
 
 function containerUpload() {
   console.log('container upload click');
 }
 
 $('#buttonUpload').click(containerUpload);
+
