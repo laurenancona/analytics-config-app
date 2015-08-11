@@ -63,24 +63,26 @@
                 </button>   Create a <a href="http://www.google.com/tagmanager/" target="blank">Google Tag Manager Account</a>
 
                 <h4>Configure Container</h4>
+                <div id="selectContainer">
+                <!-- Left aligned menu below button -->
+                  Select container
+                  <button id="demo-menu-lower-left"
+                          class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">arrow_drop_down_circle</i>
+                  </button>
+
+                  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                      for="demo-menu-lower-left">
+                    <li class="mdl-menu__item">example.gov</li>
+                    <li class="mdl-menu__item">example.gov</li>
+                    <li class="mdl-menu__item">example.gov</li>
+                  </ul>
+                </div>
+                <hr>
                 <div>
                   <button id="buttonUpload" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" href="javascript:auth();">Upload</button>
                 </div>
                 <div id="accountsTable">
-                  <table class="mdl-data-table mdl-js-data-table">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Container Id</th>
-                      </tr>
-                    </thead>
-                    <tbody class="mdl-data-table--selectable">
-                      <tr>
-                        <td>1</td>
-                        <td>2</td>                    
-                      </tr>
-                    </tbody>
-                  </table>
                 </div>
 
                 <hr>
