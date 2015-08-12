@@ -32,7 +32,7 @@ function handleAuthClick(event) {
 // Load the API and make an API call.  Display the results on the screen.
 function makeApiCall() {
   gapi.client.load('tagmanager', 'v1', function() {
-    var request = gapi.client.tagmanager.accounts.get({
+    var request = gapi.client.tagmanager.accounts.list({
     });
     request.execute(function(resp) {
       // var accountsInfo = document.createElement('h5');
