@@ -3,7 +3,7 @@ var clientId = '735213377869-ij7q11i3740bf2ab6msibo100b43cfja.apps.googleusercon
 
 var apiKey = 'AIzaSyA-Bt5ZIV_zu0D6NRzWsJ8pkA9rGWC5O5s';
 
-var scopes = 'https://www.googleapis.com/auth/tagmanager.manage.accounts';
+var scopes = 'https://www.googleapis.com/auth/tagmanager.manage.accounts https://www.googleapis.com/auth/analytics.edit';
 
 function handleClientLoad() {
   gapi.client.setApiKey(apiKey);
