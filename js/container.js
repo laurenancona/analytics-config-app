@@ -109,28 +109,28 @@ function makeApiCall() {
 //   Mustache.render(template, accountsData)
 
 // Load container configuration JSON file from server
-containerData = null;
-$.ajax('unified-analytics.json', {
-  dataType: 'text',
-  success: function(data) {
-    containerData = data
-  //  console.log(data);
-  }
-})
-
-
-// POST container configuration to GTM accountoki
-// var accountId = '';
-// var containerId = '';
-// var createUrl = '';
-// $.ajax(createUrl, {
-//   method: 'POST',
-//   contentType: 'application/json'
-//   data: containerData
+// containerData = null;
+// $.ajax('unified-analytics.json', {
+//   dataType: 'text',
+//   success: function(data) {
+//     containerData = data
+//   //  console.log(data);
+//   }
 // })
 
-function containerUpload() {
-  console.log('container upload click');
-}
-$('#buttonUpload').click(containerUpload);
+
+// // POST container configuration to GTM accountoki
+// // var accountId = '';
+// // var containerId = '';
+// // var createUrl = '';
+// // $.ajax(createUrl, {
+// //   method: 'POST',
+// //   contentType: 'application/json'
+// //   data: containerData
+// // })
+
+// function containerUpload() {
+//   console.log('container upload click');
+// }
+// $('#buttonUpload').click(containerUpload);
 
