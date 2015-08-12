@@ -82,7 +82,7 @@ function makeApiCall() {
 //   console.log(response);
 // });
 
-};
+// };
 
 
 // var accounts = gapi.client.tagmanager.accounts();
@@ -109,14 +109,14 @@ function makeApiCall() {
 //   Mustache.render(template, accountsData)
 
 // Load container configuration JSON file from server
-containerData = null;
-$.ajax('unified-analytics.json', {
-  dataType: 'text',
-  success: function(data) {
-    containerData = data
-  //  console.log(data);
-  }
-})
+// containerData = null;
+// $.ajax('unified-analytics.json', {
+//   dataType: 'text',
+//   success: function(data) {
+//     containerData = data
+//   //  console.log(data);
+//   }
+// })
 
 
 // POST container configuration to GTM accountoki
@@ -129,8 +129,8 @@ $.ajax('unified-analytics.json', {
 //   data: containerData
 // })
 
-function containerUpload() {
-  console.log('container upload click');
-}
-$('#buttonUpload').click(containerUpload);
+// function containerUpload() {
+//   console.log('container upload click');
+// }
+// $('#buttonUpload').click(containerUpload);
 
