@@ -82,7 +82,7 @@ function makeApiCall() {
 //   console.log(response);
 // });
 
-};
+// };
 
 
 // var accounts = gapi.client.tagmanager.accounts();
