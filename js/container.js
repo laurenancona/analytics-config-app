@@ -33,7 +33,7 @@ function handleAuthClick(event) {
 function makeApiCall() {
   gapi.client.load('tagmanager', 'v1', function() {
     var request = gapi.client.tagmanager.accounts.get({
-      'accountId': []
+      'accounts': []
     });
     request.execute(function(resp) {
       // var accountsInfo = document.createElement('h5');
