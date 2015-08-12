@@ -29,20 +29,20 @@
 ## GTM Uses
 ---
 - multitude of "tag" types
-	- mostly small JavaScript...scripts:
-		- web analytics (vendor independence)
-		- performance measurement (New Relic)
-		- advertising conversion pixels
-		- custom JavaScript (user research tools)
+- mostly small JavaScript...scripts:
+	- web analytics (vendor independence)
+	- performance measurement (New Relic)
+	- advertising conversion pixels
+	- custom JavaScript (user research tools)
 
 
 
-### Preparation
+### - Preparation-
 ## What *should* you be tracking?
 ---
-- Crawl primary .gov (.org, .net) domain
-	- [Screaming Frog SEO Spider](http://www.screamingfrog.co.uk/seo-spider/)
-		- GUI, < 500 pages free
+Crawl primary .gov (.org, .net) domain
+- [Screaming Frog SEO Spider](http://www.screamingfrog.co.uk/seo-spider/)
+- GUI, < 500 pages free
 Note: Need to know where you're going, so tracking audit. For short term, if your site is huge, start crawl with just the subdir of the dept you're working with. This will also tell you where GA is or is not already present
 
 
@@ -50,13 +50,15 @@ Note: Need to know where you're going, so tracking audit. For short term, if you
 
 ## The fun part
 ---
-- List all non .gov (yep, Google)
+- List all non .gov sites(yep, Google)
+- Contact 
 Note: I thought we were alone in having many non .gov sites; every 1-off initiative has a vanity URL. No one had a list.
 
 
 
 <!-- .slide: <iframe data-src="http://hakim.se"></iframe> -->
-### What *are* you tracking?
+## What *are* you tracking?
+---
 - any current analytics properties?
 - any other tracking tools (Adobe _formerly Omniture_, Open Analytics, etc)
 - compare with 1st list
@@ -78,17 +80,18 @@ Orlando | UA-45327637-4 |
 
 
 ## What is in this thing?
-- [adds addt'l data to GA](http://www.simoahava.com/analytics/improve-data-collection-with-four-custom-dimensions/)
+---
+[Adds additional data to GA](http://www.simoahava.com/analytics/improve-data-collection-with-four-custom-dimensions/)
 - tracks document downloads (like PDFs)
 - useful for later reporting
 
 
 
 
-### TOGETHER:
+### - TOGETHER -
 ## Import GTM Configuration 
 ---
-- [Upload container](unified-analytics.json)
+[Upload container](https://raw.githubusercontent.com/laurenancona/analytics-cfa/gh-pages/unified-analytics.json)
 - adds Google Analytics "tag"
 - adds custom [dimensions](https://support.google.com/analytics/answer/1033861?hl=en)
 - adds custom events
@@ -101,13 +104,13 @@ Need to add the following [custom dimensions](img/custom-dimension.gif)
 
 
 
-### HOMEWORK:
+### - HOMEWORK -
 ## Deploy Tag Manager
 ---
-- [Deploy Tag Manager container](Link)
-	- This snippet will go in every page/template/site
-	- If more than 1 current 'template,' start w/department
-	- Once deployed, test
+Deploy Tag Manager container
+- This snippet will go in every page/template/site
+- If more than 1 current 'template,' start w/department
+- Once deployed, test
 Note: see toolbox at end
 
 
