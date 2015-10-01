@@ -1,4 +1,4 @@
-_In preparation for the Unified Analytics presentation, we need two things (should take ~10 minutes total):_
+_In preparation for the Unified Analytics implementation, we need two things (should take ~10 minutes total):_
 
 ## 1. Create a Google Tag Manager Account
 _You will need a Google account; for convenience use the same email used to log in to Google Analytics._
