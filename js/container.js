@@ -1,7 +1,7 @@
 
 var clientId = '927542320010-oqcp2up6lv1t2lfv4j463bkggplcvpoa.apps.googleusercontent.com';
 
-var apiKey = 'AIzaSyA-Bt5ZIV_zu0D6NRzWsJ8pkA9rGWC5O5s';
+var apiKey = 'AIzaSyBz5pBy064zkh1F_zHdBGzydgMTFilHpXw';
 
 var scopes = 'https://www.googleapis.com/auth/tagmanager.manage.accounts https://www.googleapis.com/auth/analytics.edit';
 
@@ -13,7 +13,7 @@ function checkAuth() {
   gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
 }
 
-// If we're already authentiatd, don't show the button
+// If we're already authenticated, don't show the button
 function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('authorize-button');
   if (authResult && !authResult.error) {
