@@ -1,11 +1,37 @@
+## 
+<!-- .slide: data-background="waterbill_080515.gif" -->
 
-## Why?
+
+
+## [phila.gov doesn't work](http://phila.gov)
+
+
+
+## [alpha.phila.gov](http://alpha.phila.gov)
+
+
+
+## [Web analytics as open data](http://analytics.usa.gov)
+that’s so meta
+
+
+## 
+- make decisions to better serve our audience
+- What might be misleading about just looking at pageviews?
+
+
+
+## We don't want to know who users are…we want to know what users do.
+
+
+
+## Step back
 ---
 - Big picture: 
 	- users: who, how, when, what - maybe why?
 - Benchmarking, progress
 - Measure response to changes
-- [Transparency](http://analytics.phila.gov)
+- [Transparency](http://analytics.usa.gov)
 
 
 
@@ -22,7 +48,6 @@
 - a "container" or placeholder
 - UI for management
 - [Google Analytics Academy Course](https://analyticsacademy.withgoogle.com/course05/preview)
-	- certificate until 7/24
 
 
 

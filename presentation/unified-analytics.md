@@ -22,7 +22,7 @@
 - a "container" or placeholder
 - UI for management
 - [Google Analytics Academy Course](https://analyticsacademy.withgoogle.com/course05/preview)
-	- certificate until 7/24
+
 
 
 
