@@ -37,7 +37,7 @@ function makeApiCall() {
     });
     request.execute(function(resp) {
       var accountsInfo = document.createElement('p');
-      accountsInfo.appendChild(document.createTextNode(resp.accounts.name));
+      accountsInfo.appendChild(document.createTextNode(resp.accounts));
       document.getElementById('accounts-list').appendChild(accountsInfo);
       console.log(resp)
     });
