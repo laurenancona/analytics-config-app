@@ -35,9 +35,9 @@ function makeApiCall() {
     var request = gapi.client.tagmanager.accounts.list({
     });
     request.execute(function(resp) {
-      // var accountsInfo = document.createElement('h5');
-      // accountsInfo.appendChild(document.createTextNode(resp.displayName));
-      // document.getElementById('content').appendChild(accountsInfo);
+      var accountsInfo = document.createElement('h5');
+      accountsInfo.appendChild(document.createTextNode(resp.displayName));
+      document.getElementById('accounts-list').appendChild(accountsInfo);
       console.log(resp)
     });
   });
