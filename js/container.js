@@ -1,5 +1,5 @@
 
-var clientId = '735213377869-ij7q11i3740bf2ab6msibo100b43cfja.apps.googleusercontent.com';
+var clientId = '927542320010-oqcp2up6lv1t2lfv4j463bkggplcvpoa.apps.googleusercontent.com';
 
 var apiKey = 'AIzaSyA-Bt5ZIV_zu0D6NRzWsJ8pkA9rGWC5O5s';
 
@@ -13,6 +13,7 @@ function checkAuth() {
   gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
 }
 
+// If we're already authentiatd, don't show the button
 function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('authorize-button');
   if (authResult && !authResult.error) {
@@ -23,7 +24,7 @@ function handleAuthResult(authResult) {
     authorizeButton.onclick = handleAuthClick;
   }
 }
-
+// Listen for authorize button click and authenticate
 function handleAuthClick(event) {
   gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
   return false;
@@ -35,8 +36,8 @@ function makeApiCall() {
     var request = gapi.client.tagmanager.accounts.list({
     });
     request.execute(function(resp) {
-      var accountsInfo = document.createElement('h5');
-      accountsInfo.appendChild(document.createTextNode(resp.displayName));
+      var accountsInfo = document.createElement('p');
+      accountsInfo.appendChild(document.createTextNode(resp.accounts.name));
       document.getElementById('accounts-list').appendChild(accountsInfo);
       console.log(resp)
     });
@@ -132,4 +133,3 @@ function makeApiCall() {
 //   console.log('container upload click');
 // }
 // $('#buttonUpload').click(containerUpload);
-
