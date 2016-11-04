@@ -1,8 +1,13 @@
 
-var clientId = '927542320010-oqcp2up6lv1t2lfv4j463bkggplcvpoa.apps.googleusercontent.com';
+/*
+  These are limited by whitelisted callbacks but still should probably find
+  a way to keep them out of version control
+*/
 
+var clientId = '927542320010-oqcp2up6lv1t2lfv4j463bkggplcvpoa.apps.googleusercontent.com';
 var apiKey = 'AIzaSyBz5pBy064zkh1F_zHdBGzydgMTFilHpXw';
 
+// Grant scopes to both Tag Manager and customize Google Analytics configuration
 var scopes = 'https://www.googleapis.com/auth/tagmanager.manage.accounts https://www.googleapis.com/auth/analytics.edit';
 
 function handleClientLoad() {
@@ -14,6 +19,7 @@ function checkAuth() {
 }
 
 // If we're already authenticated, don't show the button
+// TODO: provide a mechanism to revoke auth other than session expiration
 function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('authorize-button');
   if (authResult && !authResult.error) {
@@ -24,13 +30,14 @@ function handleAuthResult(authResult) {
     authorizeButton.onclick = handleAuthClick;
   }
 }
+
 // Listen for authorize button click and authenticate
 function handleAuthClick(event) {
   gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
   return false;
 }
 
-// Load the API and make an API call.  Display the results on the screen.
+// Load the API and make an API call. Display the results on the screen.
 function makeApiCall() {
   gapi.client.load('tagmanager', 'v1', function() {
     var request = gapi.client.tagmanager.accounts.list({
@@ -38,18 +45,23 @@ function makeApiCall() {
     request.execute(function(resp) {
       var accountsInfo = document.createElement('ul');
 			for ( i = 0; i < resp.accounts.length; i++ ) {
-				var item = document.createElement('li'); 
-				item.innerText = resp.accounts[i].name;
+				var item = document.createElement('li');
+				item.innerText = resp.accounts[i].name + ', ' + resp.accounts[i].accountId;
 				accountsInfo.appendChild(item)
 				// accountsInfo.appendChild(document.createTextNode(resp.accounts[i].name));
 			}
       document.getElementById('accounts-list').appendChild(accountsInfo);
       console.table(resp)
     });
+
+	/* Event listener for onClick to select from 'accounts-list' & return a list
+	*of containers as above
+	*/
+
   });
 }
 
-
+// TODO: Clean up this mess
 
 //   function onSignIn(googleUser) {
 //   var profile = googleUser.getBasicProfile();
@@ -98,9 +110,6 @@ function makeApiCall() {
 //         });
 
 
-
-
-
 // accountsData
 // $.ajax('https://www.googleapis.com/tagmanager/v1/accounts', {
 //     success: function(data) {
@@ -122,7 +131,6 @@ function makeApiCall() {
 //   //  console.log(data);
 //   }
 // })
-
 
 // // POST container configuration to GTM accountoki
 // // var accountId = '';
