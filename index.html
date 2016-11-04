@@ -72,23 +72,27 @@
 					<i class="material-icons">chevron_right</i>
 				</button> Create a <a href="http://www.google.com/tagmanager/" target="blank">Google Tag Manager Account</a>
 				<div class="demo-grid-ruler mdl-grid">
-					<div id="selectAccount" class="mdl-cell mdl-cell--4-col">
+					<!-- Choose GTM account -->
+					<div id="selectAccount" class="mdl-cell mdl-cell--6-col">
 						<h4>Select account</h4>
 						<div id="accounts-list">
-							<!--      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                      <input type="radio" id="option-1" class="mdl-radio__button" name="accounts" value="1" />
-                      <span class="mdl-radio__label">Option 1</span>
-                    </label><br>
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                      <input type="radio" id="option-2" class="mdl-radio__button" name="accounts" value="2" />
-                      <span class="mdl-radio__label">Option 2</span>
-                    </label><br>
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-                      <input type="radio" id="option-3" class="mdl-radio__button" name="accounts" value="3"  />
-                      <span class="mdl-radio__label">Option 3</span>
-                    </label> -->
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+								<input type="radio" id="option-1" class="mdl-radio__button" name="accounts" value="1" />
+								<span class="mdl-radio__label">Option 1</span>
+							</label>
+							<br>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+								<input type="radio" id="option-2" class="mdl-radio__button" name="accounts" value="2" />
+								<span class="mdl-radio__label">Option 2</span>
+							</label>
+							<br>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+								<input type="radio" id="option-3" class="mdl-radio__button" name="accounts" value="3" />
+								<span class="mdl-radio__label">Option 3</span>
+							</label>
 						</div>
-						<div id="selectContainer" class="mdl-cell mdl-cell--3-col">
+						<!-- Choose GTM container -->
+						<div id="selectContainer" class="mdl-cell mdl-cell--6-col">
 							<h4>Select container</h4>
 							<!--   <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
                       <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4" />
@@ -103,18 +107,15 @@
                       <span class="mdl-radio__label">Option 6</span>
                     </label> -->
 						</div>
-						<div id="selectContainer" class="mdl-cell mdl-cell--2-col">
-							<br>
-							<h4>- OR -</h4>
-						</div>
-						<div id="selectContainer" class="mdl-cell mdl-cell--3-col">
+
+						<!-- <div id="selectContainer" class="mdl-cell mdl-cell--3-col">
 							<br>
 							<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Create container</button>
-						</div>
+						</div> -->
 					</div>
 					<hr>
-					<h3>Select Options</h3>
-					<div id="selectOptions" class="mdl-cell mdl-cell--6-col">
+					<h4>Select Options</h4>
+					<div id="selectOptions" class="mdl-cell mdl-cell--12-col">
 						<div>
 							<label class="mdl-switch mdl-js-switch" for="downloads">
 								<input type="checkbox" id="downloads" class="mdl-switch__input" checked />
