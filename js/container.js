@@ -36,9 +36,12 @@ function makeApiCall() {
     var request = gapi.client.tagmanager.accounts.list({
     });
     request.execute(function(resp) {
-      var accountsInfo = document.createElement('p');
+      var accountsInfo = document.createElement('ul');
 			for ( i = 0; i < resp.accounts.length; i++ ) {
-      	accountsInfo.appendChild(document.createTextNode(resp.accounts[i].name));
+				var item = document.createElement('li'); 
+				item.innerText = resp.accounts[i].name;
+				accountsInfo.appendChild(item)
+				// accountsInfo.appendChild(document.createTextNode(resp.accounts[i].name));
 			}
       document.getElementById('accounts-list').appendChild(accountsInfo);
       console.table(resp)
