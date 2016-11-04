@@ -37,9 +37,11 @@ function makeApiCall() {
     });
     request.execute(function(resp) {
       var accountsInfo = document.createElement('p');
-      accountsInfo.appendChild(document.createTextNode(resp.accounts));
+			for ( i = 0; i < resp.accounts.length; i++ ) {
+      	accountsInfo.appendChild(document.createTextNode(resp.accounts[i].name));
+			}
       document.getElementById('accounts-list').appendChild(accountsInfo);
-      console.log(resp)
+      console.table(resp)
     });
   });
 }
