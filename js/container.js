@@ -8,7 +8,7 @@ var clientId = '927542320010-oqcp2up6lv1t2lfv4j463bkggplcvpoa.apps.googleusercon
 var apiKey = 'AIzaSyBz5pBy064zkh1F_zHdBGzydgMTFilHpXw';
 
 // Grant scopes to both Tag Manager and customize Google Analytics configuration
-var scopes = 'https://www.googleapis.com/auth/tagmanager.manage.accounts https://www.googleapis.com/auth/analytics.edit';
+var scopes = 'https://www.googleapis.com/auth/tagmanager.manage.accounts https://www.googleapis.com/auth/tagmanager.edit.containers https://www.googleapis.com/auth/analytics.edit';
 
 function handleClientLoad() {
   gapi.client.setApiKey(apiKey);
@@ -20,6 +20,7 @@ function checkAuth() {
 
 // If we're already authenticated, don't show the button
 // TODO: provide a mechanism to revoke auth other than session expiration
+
 function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('authorize-button');
   if (authResult && !authResult.error) {
@@ -40,29 +41,56 @@ function handleAuthClick(event) {
 // Load the API and make an API call. Display the results on the screen.
 function makeApiCall() {
   gapi.client.load('tagmanager', 'v1', function() {
-    var request = gapi.client.tagmanager.accounts.list({
+    var requestAcct = gapi.client.tagmanager.accounts.list({
     });
-    request.execute(function(resp) {
+    requestAcct.execute(function(resp) {
       var accountsInfo = document.createElement('ul');
 			for ( i = 0; i < resp.accounts.length; i++ ) {
 				var item = document.createElement('li');
-				item.innerText = resp.accounts[i].name + ', ' + resp.accounts[i].accountId;
+				item.innerText = resp.accounts[i].name + ', ' +
+				resp.accounts[i].accountId;
 				accountsInfo.appendChild(item)
 				// accountsInfo.appendChild(document.createTextNode(resp.accounts[i].name));
-			}
+			}	;
       document.getElementById('accounts-list').appendChild(accountsInfo);
       console.table(resp)
     });
-
-	/* Event listener for onClick to select from 'accounts-list' & return a list
+	});
+}
+// <+============================== BOOKMARK ================================+>
+	/* Event listener (scope?) for onClick to select from 'accounts-list' & return a list
 	*of containers as above
 	*/
 
-  });
-}
+		//sketch of container request:
 
-// TODO: Clean up this mess
+		// var acctId = onClick(document.getElementById());// or something
+    // var requestAcct = gapi.client.tagmanager.accounts.list({
+// function makeContainerApiCall() {
+// 	gapi.client.load('tagmanager', 'v1', function() {
+// 		var acctId = "31734588"
+// 		var requestCont = gapi.client.tagmanager.accounts.acctId.containers.list({
+// 		});
+// 		console.log(requestCont);
+// 	})
+// }
+		// requestCont.execute(function(resp) {
+		// 	var containersInfo = document.createElement('ul');
+		// 	for ( i = 0; i < resp.containers.length; i++ ) {
+		// 		var item = document.createElement('li');
+		// 		item.innerText = resp.containers[i] + ', ' +
+		// 		resp.accounts.containers[i].containerId;
+		// 		containersInfo.appendChild(item)
+		// 		// accountsInfo.appendChild(document.createTextNode(resp.accounts[i].name));
+		// 	}
+		// 	document.getElementById('containers-list').appendChild(containersInfo);
+		// 	console.table(resp)
+		// });
+  	// });
+	// });
+// }
 
+// TODO: Clean up this mess ====================================================
 //   function onSignIn(googleUser) {
 //   var profile = googleUser.getBasicProfile();
 //   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.

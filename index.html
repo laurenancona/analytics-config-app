@@ -76,24 +76,19 @@
 					<div id="selectAccount" class="mdl-cell mdl-cell--6-col">
 						<h4>Select account</h4>
 						<div id="accounts-list">
+
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
 								<input type="radio" id="option-1" class="mdl-radio__button" name="accounts" value="1" />
 								<span class="mdl-radio__label">Option 1</span>
 							</label>
-							<br>
-							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-								<input type="radio" id="option-2" class="mdl-radio__button" name="accounts" value="2" />
-								<span class="mdl-radio__label">Option 2</span>
-							</label>
-							<br>
-							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-								<input type="radio" id="option-3" class="mdl-radio__button" name="accounts" value="3" />
-								<span class="mdl-radio__label">Option 3</span>
-							</label>
+
 						</div>
 						<!-- Choose GTM container -->
 						<div id="selectContainer" class="mdl-cell mdl-cell--6-col">
 							<h4>Select container</h4>
+							<div id="containers-list">
+								<!-- <button id="buttonUpload" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" href="javascript:makeContainerApiCall();">Get containers</button> -->
+
 							<!--   <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
                       <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4" />
                       <span class="mdl-radio__label">Option 4</span>
@@ -106,6 +101,7 @@
                       <input type="radio" id="option-6" class="mdl-radio__button" name="options" value="6" />
                       <span class="mdl-radio__label">Option 6</span>
                     </label> -->
+							</div>
 						</div>
 
 						<!-- <div id="selectContainer" class="mdl-cell mdl-cell--3-col">
@@ -121,14 +117,14 @@
 								<input type="checkbox" id="downloads" class="mdl-switch__input" checked />
 								<span class="mdl-switch__label">Track Document Downloads</span>
 							</label>
-							<p><small>Lorem ipsum explanation blah blah</small></p>
+							<p><small>Track when user downloads .doc(x), .xls(x), .csv, or .pdf files.</small></p>
 						</div>
 						<div>
 							<label class="mdl-switch mdl-js-switch" for="videos">
 								<input type="checkbox" id="videos" class="mdl-switch__input" checked/>
 								<span class="mdl-switch__label">Track Video Plays</span>
 							</label>
-							<p><small>Lorem ipsum explanation blah</small></p>
+							<p><small>Track when a user plays embedded video.</small></p>
 						</div>
 						<div>
 							<label class="mdl-switch mdl-js-switch" for="frustrated">
@@ -136,6 +132,13 @@
 								<span class="mdl-switch__label">Track Frustrated Users</span>
 							</label>
 							<p><small>Triggered when a user rapidly clickes 5+ times on a non-interactive element</small></p>
+						</div>
+						<div>
+							<label class="mdl-switch mdl-js-switch" for="printing">
+								<input type="checkbox" id="printing" class="mdl-switch__input" checked/>
+								<span class="mdl-switch__label">Track Page Printing</span>
+							</label>
+							<p><small>Triggered when a user invokes the print dialog, either via menu or keystroke.</small></p>
 						</div>
 					</div>
 					<!-- <div>
