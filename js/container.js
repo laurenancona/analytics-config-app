@@ -25,7 +25,7 @@ function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('authorize-button');
   if (authResult && !authResult.error) {
     authorizeButton.style.visibility = 'hidden';
-    makeApiCall();
+    getAccountsList();
   } else {
     authorizeButton.style.visibility = '';
     authorizeButton.onclick = handleAuthClick;
@@ -39,19 +39,36 @@ function handleAuthClick(event) {
 }
 
 // Load the API and make an API call. Display the results on the screen.
-function makeApiCall() {
+function getAccountsList() {
   gapi.client.load('tagmanager', 'v1', function() {
     var requestAcct = gapi.client.tagmanager.accounts.list({
     });
     requestAcct.execute(function(resp) {
-      var accountsInfo = document.createElement('ul');
+      var accountsInfo = document.createElement('div');
 			for ( i = 0; i < resp.accounts.length; i++ ) {
-				var item = document.createElement('li');
-				item.innerText = resp.accounts[i].name + ', ' +
-				resp.accounts[i].accountId;
-				accountsInfo.appendChild(item)
-				// accountsInfo.appendChild(document.createTextNode(resp.accounts[i].name));
-			}	;
+				var labelDiv = document.createElement('div');
+				var labelItem = document.createElement('label');
+				var inputItem = document.createElement('input');
+				var spanItem = document.createElement('span');
+
+				labelItem.setAttribute('for', resp.accounts[i].accountId);
+				labelItem.className = 'mdl-radio mdl-js-radio mdl-js-ripple-effect';
+
+				inputItem.id = resp.accounts[i].accountId;
+				inputItem.type = 'radio';
+				inputItem.className = 'mdl-radio__button';
+				inputItem.name = 'accounts';
+				inputItem.value = resp.accounts[i].accountId;
+				labelItem.appendChild(inputItem);
+
+				spanItem.className = 'mdl-radio__label';
+				spanItem.innerText = resp.accounts[i].name + ' | ' + resp.accounts[i].accountId;
+				labelItem.appendChild(spanItem);
+
+				componentHandler.upgradeElement(labelItem);
+				labelDiv.appendChild(labelItem);
+				accountsInfo.appendChild(labelDiv);
+			};
       document.getElementById('accounts-list').appendChild(accountsInfo);
       console.table(resp)
     });
@@ -64,16 +81,52 @@ function makeApiCall() {
 
 		//sketch of container request:
 
-		// var acctId = onClick(document.getElementById());// or something
+		// var acctId = onClick(document.getElementById('buttonContainers'));// or something
     // var requestAcct = gapi.client.tagmanager.accounts.list({
-// function makeContainerApiCall() {
-// 	gapi.client.load('tagmanager', 'v1', function() {
-// 		var acctId = "31734588"
-// 		var requestCont = gapi.client.tagmanager.accounts.acctId.containers.list({
-// 		});
-// 		console.log(requestCont);
-// 	})
-// }
+
+
+function getContainersList() {
+	gapi.client.load('tagmanager', 'v1', function() {
+		// var acctId = "31734588"
+		var requestCont = gapi.client.tagmanager.accounts.31734588.containers({
+		});
+		requestCont.execute(function(resp) {
+      // var containerInfo = document.createElement('div');
+			// for ( i = 0; i < resp.accounts.length; i++ ) {
+			// 	var labelDiv = document.createElement('div');
+			// 	var labelItem = document.createElement('label');
+			// 	var inputItem = document.createElement('input');
+			// 	var spanItem = document.createElement('span');
+			//
+			// 	labelItem.setAttribute('for', resp.accounts[i].accountId);
+			// 	labelItem.className = 'mdl-radio mdl-js-radio mdl-js-ripple-effect';
+			//
+			// 	inputItem.id = resp.accounts[i].accountId;
+			// 	inputItem.type = 'radio';
+			// 	inputItem.className = 'mdl-radio__button';
+			// 	inputItem.name = 'accounts';
+			// 	inputItem.value = resp.accounts[i].accountId;
+			// 	labelItem.appendChild(inputItem);
+			//
+			// 	spanItem.className = 'mdl-radio__label';
+			// 	spanItem.innerText = resp.accounts[i].name + ' | ' + resp.accounts[i].accountId;
+			// 	labelItem.appendChild(spanItem);
+			//
+			// 	componentHandler.upgradeElement(labelItem);
+			// 	labelDiv.appendChild(labelItem);
+			// 	accountsInfo.appendChild(labelDiv);
+			return resp
+			// };
+      // document.getElementById('containers-list').appendChild(containerInfo);
+    });
+		console.table(resp)
+	});
+}
+
+window.onload = function (){
+	var el = document.getElementById("buttonContainers");
+	el.addEventListener("click", getContainersList);
+};
 		// requestCont.execute(function(resp) {
 		// 	var containersInfo = document.createElement('ul');
 		// 	for ( i = 0; i < resp.containers.length; i++ ) {
