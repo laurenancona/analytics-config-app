@@ -70,7 +70,7 @@ function getAccountsList() {
 				accountsInfo.appendChild(labelDiv);
 			};
       document.getElementById('accounts-list').appendChild(accountsInfo);
-      console.table(resp)
+      // console.table(resp)
     });
 	});
 }
@@ -85,12 +85,12 @@ function getAccountsList() {
     // var requestAcct = gapi.client.tagmanager.accounts.list({
 
 
-function getContainersList() {
-	gapi.client.load('tagmanager', 'v1', function() {
-		// var acctId = "31734588"
-		var requestCont = gapi.client.tagmanager.accounts.31734588.containers({
-		});
-		requestCont.execute(function(resp) {
+// function getContainersList() {
+// 	gapi.client.load('tagmanager', 'v1', function() {
+// 		// var acctId = "31734588"
+// 		var requestCont = gapi.client.tagmanager.accounts['31734588'].containers({
+// 		});
+// 		requestCont.execute(function(resp) {
       // var containerInfo = document.createElement('div');
 			// for ( i = 0; i < resp.accounts.length; i++ ) {
 			// 	var labelDiv = document.createElement('div');
@@ -115,13 +115,13 @@ function getContainersList() {
 			// 	componentHandler.upgradeElement(labelItem);
 			// 	labelDiv.appendChild(labelItem);
 			// 	accountsInfo.appendChild(labelDiv);
-			return resp
-			// };
-      // document.getElementById('containers-list').appendChild(containerInfo);
-    });
-		console.table(resp)
-	});
-}
+// 			return resp
+// 			// };
+//       // document.getElementById('containers-list').appendChild(containerInfo);
+//     });
+// 		console.table(resp)
+// 	});
+// }
 
 window.onload = function (){
 	var el = document.getElementById("buttonContainers");
