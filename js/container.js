@@ -93,6 +93,7 @@ function getContainersList() {
 	gapi.client.load('tagmanager', 'v1', function() {
 		// var acctId = "31734588"
 		var requestCont = gapi.client.tagmanager.accounts.containers.list({
+      // swap this ID with the ID of the selected radio button
       "accountId": "74489837",
 		});
 		requestCont.execute(function(resp) {
