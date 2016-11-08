@@ -7,6 +7,8 @@
 var clientId = '927542320010-oqcp2up6lv1t2lfv4j463bkggplcvpoa.apps.googleusercontent.com';
 var apiKey = 'AIzaSyBz5pBy064zkh1F_zHdBGzydgMTFilHpXw';
 
+var el;
+
 // Grant scopes to both Tag Manager and customize Google Analytics configuration
 var scopes = 'https://www.googleapis.com/auth/tagmanager.manage.accounts https://www.googleapis.com/auth/tagmanager.edit.containers https://www.googleapis.com/auth/analytics.edit';
 
@@ -73,6 +75,8 @@ function getAccountsList() {
       // console.table(resp)
     });
 	});
+  el = document.getElementById("buttonContainers");
+  el.addEventListener("click", getContainersList);
 }
 // <+============================== BOOKMARK ================================+>
 	/* Event listener (scope?) for onClick to select from 'accounts-list' & return a list
@@ -85,48 +89,50 @@ function getAccountsList() {
     // var requestAcct = gapi.client.tagmanager.accounts.list({
 
 
-// function getContainersList() {
-// 	gapi.client.load('tagmanager', 'v1', function() {
-// 		// var acctId = "31734588"
-// 		var requestCont = gapi.client.tagmanager.accounts['31734588'].containers({
-// 		});
-// 		requestCont.execute(function(resp) {
+function getContainersList() {
+	gapi.client.load('tagmanager', 'v1', function() {
+		// var acctId = "31734588"
+		var requestCont = gapi.client.tagmanager.accounts.containers.list({
+      "accountId": "74489837",
+		});
+		requestCont.execute(function(resp) {
       // var containerInfo = document.createElement('div');
 			// for ( i = 0; i < resp.accounts.length; i++ ) {
 			// 	var labelDiv = document.createElement('div');
 			// 	var labelItem = document.createElement('label');
 			// 	var inputItem = document.createElement('input');
 			// 	var spanItem = document.createElement('span');
-			//
+      //
 			// 	labelItem.setAttribute('for', resp.accounts[i].accountId);
 			// 	labelItem.className = 'mdl-radio mdl-js-radio mdl-js-ripple-effect';
-			//
+      //
 			// 	inputItem.id = resp.accounts[i].accountId;
 			// 	inputItem.type = 'radio';
 			// 	inputItem.className = 'mdl-radio__button';
 			// 	inputItem.name = 'accounts';
 			// 	inputItem.value = resp.accounts[i].accountId;
 			// 	labelItem.appendChild(inputItem);
-			//
+      //
 			// 	spanItem.className = 'mdl-radio__label';
 			// 	spanItem.innerText = resp.accounts[i].name + ' | ' + resp.accounts[i].accountId;
 			// 	labelItem.appendChild(spanItem);
-			//
+      //
 			// 	componentHandler.upgradeElement(labelItem);
 			// 	labelDiv.appendChild(labelItem);
 			// 	accountsInfo.appendChild(labelDiv);
-// 			return resp
-// 			// };
-//       // document.getElementById('containers-list').appendChild(containerInfo);
-//     });
-// 		console.table(resp)
-// 	});
-// }
+			// return resp
+      console.log(resp);
+      // };
+      // document.getElementById('containers-list').appendChild(containerInfo);
+    });
+		// console.table(resp)
+	});
+}
 
-window.onload = function (){
-	var el = document.getElementById("buttonContainers");
-	el.addEventListener("click", getContainersList);
-};
+	// var el = document.getElementById("buttonContainers");
+	// el.addEventListener("click", getContainersList);
+
+
 		// requestCont.execute(function(resp) {
 		// 	var containersInfo = document.createElement('ul');
 		// 	for ( i = 0; i < resp.containers.length; i++ ) {
