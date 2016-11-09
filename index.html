@@ -41,8 +41,8 @@
 	</style>
 	<!-- Uses a header that scrolls with the text, rather than staying
   locked at the top -->
-	<div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
-		<header class="mdl-layout__header mdl-layout__header--scroll">
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
 			<div class="mdl-layout__header-row">
 				<!-- Title -->
 				<span class="mdl-layout-title">CityAnalytics</span>
@@ -50,10 +50,11 @@
 				<div class="mdl-layout-spacer"></div>
 				<!-- Navigation -->
 				<nav class="mdl-navigation">
-					<a class="mdl-navigation__link"></a>
-					<div>
+					<a class="mdl-navigation__link">
+					<!-- <div> -->
 						<button id="authorize-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Authorize</button>
-					</div>
+					<!-- </div> -->
+					</a>
 				</nav>
 			</div>
 		</header>
@@ -78,28 +79,6 @@
 						<div id="accounts-list">
 							<!-- Accounts List -->
 						</div>
-<<<<<<< Updated upstream
-						<!-- Choose GTM container -->
-						<div id="selectContainer" class="mdl-cell mdl-cell--8-col">
-							<h4>Select container</h4>
-							<button id="buttonContainers" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">Get containers</button>
-
-							<div id="containers-list">
-								<!-- <button id="buttonContainers" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" href="javascript:getContainersList();">Get containers</button> -->
-							<!--   <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
-                      <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4" />
-                      <span class="mdl-radio__label">Option 4</span>
-                    </label><br>
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
-                      <input type="radio" id="option-5" class="mdl-radio__button" name="options" value="5" />
-                      <span class="mdl-radio__label">Option 5</span>
-                    </label><br>
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
-                      <input type="radio" id="option-6" class="mdl-radio__button" name="options" value="6" />
-                      <span class="mdl-radio__label">Option 6</span>
-                    </label> -->
-							</div>
-=======
 					</div>
 					<!-- Choose GTM container -->
 					<div id="selectContainer" class="mdl-cell mdl-cell--8-col">
@@ -107,7 +86,6 @@
 						<button id="buttonContainers" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect ">Get containers</button>
 						<div id="containers-list">
 							<!-- Containers List -->
->>>>>>> Stashed changes
 						</div>
 					</div>
 
