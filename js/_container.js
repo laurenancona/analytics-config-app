@@ -7,9 +7,6 @@
 var clientId = '927542320010-oqcp2up6lv1t2lfv4j463bkggplcvpoa.apps.googleusercontent.com';
 var apiKey = 'AIzaSyBz5pBy064zkh1F_zHdBGzydgMTFilHpXw';
 
-var cont;
-var acct;
-
 // Grant scopes to both Tag Manager and customize Google Analytics configuration
 var scopes = 'https://www.googleapis.com/auth/tagmanager.manage.accounts https://www.googleapis.com/auth/tagmanager.edit.containers https://www.googleapis.com/auth/analytics.edit';
 
@@ -76,8 +73,6 @@ function getAccountsList() {
       // console.table(resp)
     });
 	});
-  cont = document.getElementById("buttonContainers");
-  cont.addEventListener("click", getContainersList);
 }
 // <+============================== BOOKMARK ================================+>
 	/* Event listener (scope?) for onClick to select from 'accounts-list' & return a list
@@ -93,47 +88,44 @@ function getAccountsList() {
 function getContainersList() {
 	gapi.client.load('tagmanager', 'v1', function() {
 		// var acctId = "31734588"
-		var requestCont = gapi.client.tagmanager.accounts.containers.list({
-      // swap this ID with the ID of the selected radio button
-      "accountId": "74489837",
+		var requestCont = gapi.client.tagmanager.accounts['31734588'].containers({
 		});
 		requestCont.execute(function(resp) {
-			var containerInfo = document.createElement('div');
-			for ( i = 0; i < resp.containers.length; i++ ) {
+      var containerInfo = document.createElement('div');
+			for ( i = 0; i < resp.accounts.containers.length; i++ ) {
 				var labelDiv = document.createElement('div');
 				var labelItem = document.createElement('label');
 				var inputItem = document.createElement('input');
 				var spanItem = document.createElement('span');
 
-				labelItem.setAttribute('for', resp.containers[i].containerId);
+				labelItem.setAttribute('for', resp.accounts.containers[i].accountId);
 				labelItem.className = 'mdl-radio mdl-js-radio mdl-js-ripple-effect';
 
-				inputItem.id = resp.containers[i].containerId;
+				inputItem.id = resp.accounts.containers[i].accountId;
 				inputItem.type = 'radio';
 				inputItem.className = 'mdl-radio__button';
-				inputItem.name = 'containers';
-				inputItem.value = resp.containers[i].containerId;
+				inputItem.name = 'accounts';
+				inputItem.value = resp.accounts.containers[i].accountId;
 				labelItem.appendChild(inputItem);
 
 				spanItem.className = 'mdl-radio__label';
-				spanItem.innerText = resp.containers[i].name + ' | ' + resp.containers[i].containerId;
+				spanItem.innerText = resp.accounts.containers[i].name + ' | ' + resp.accounts.containers[i].accountId;
 				labelItem.appendChild(spanItem);
 
 				componentHandler.upgradeElement(labelItem);
 				labelDiv.appendChild(labelItem);
-				containerInfo.appendChild(labelDiv);
-      	// console.log(resp);
-      };
+				accountsInfo.appendChild(labelDiv);
+			};
       document.getElementById('containers-list').appendChild(containerInfo);
     });
 		// console.table(resp)
 	});
 }
 
-	// var el = document.getElementById("buttonContainers");
-	// el.addEventListener("click", getContainersList);
-
-
+window.onload = function (){
+	var el = document.getElementById("buttonContainers");
+	el.addEventListener("click", getContainersList);
+};
 		// requestCont.execute(function(resp) {
 		// 	var containersInfo = document.createElement('ul');
 		// 	for ( i = 0; i < resp.containers.length; i++ ) {
